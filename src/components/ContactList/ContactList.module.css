@@ -1,0 +1,39 @@
+ .contactsList {
+
+padding: 20px;
+overflow-y: hidden;
+font-size: 30px;
+font-weight:400;
+line-height:20px;
+list-style: none;
+background-color: lightblue;
+overflow: scroll;
+-webkit-overflow-scrolling: touch;
+border-color: transparent;
+border-style: solid;
+border-radius: 20px;
+}
+
+.contactItem {
+    display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+}  
+    
+
+
+
+
+
+        .delButton {
+            border-radius: 20px;
+                margin: 0 auto;
+                padding: 10px 20px;
+                font-size: 20px;
+                font-weight: 100px;
+                line-height: normal;
+                margin-left: 30px
+        } 
+
+

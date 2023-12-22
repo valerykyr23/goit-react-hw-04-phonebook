@@ -1,0 +1,49 @@
+
+
+.mainForm {
+    display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-height: 200vh;
+        padding: 20px;
+        border-radius: 20px;
+        background-color: lightblue;
+        -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 6px 14px 4px rgba(0, 0, 0, 0);
+            box-shadow: 0px 10px 13px -7px #000000, 5px 6px 14px 4px rgba(0, 0, 0, 0);
+    
+} 
+
+.formInput {
+    
+        outline: 20;
+        outline-color: #000000;
+        width: 100%;
+        margin-bottom: 10px;
+        border-radius: 20px;
+        padding: 5px;
+        background-color: whitesmoke;
+        box-shadow:inset
+    }
+    
+       
+
+.formLabel {
+    font-size: 20px;
+    font-weight: 100;
+    line-height: normal;
+    display: block;
+    margin-bottom: 10px;} 
+
+
+
+.addButton {
+    border-radius: 20px;
+margin: 0 auto;
+padding: 10px 20px;
+font-size: 20px;
+font-weight: 100px;
+line-height: normal
+}
+
+
+

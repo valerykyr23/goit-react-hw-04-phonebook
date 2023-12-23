@@ -1,46 +1,59 @@
 // eslint-disable-next-line
-import React, { Component } from 'react';
+import React, { useState} from 'react';
 import css from './ContactForm.module.css';
 
-export class ContactForm extends Component {
+export const ContactForm = (props) => {
   
-  state = {
-  
-  name: '',
-  number: ''
-}
 
-  handleInputChange = (event) => {
+  const [name, setName] = useState('');
+  const [number, setNumber] = useState('');
+  
+
+  const handleInputChange = (event) => {
    
-    const { name, value } = event.currentTarget;
-  this.setState ({[name]: value})
-  }
-  
-  
-  
-  handleSubmit = (event) => {
-    event.preventDefault();
-    this.props.onSubmit(this.state);
-    this.setState({ name: "", number: "" });
-  }
+    
 
-  
-  
-  
-  
-  render() {
+    switch (event.currentTarget.name) {
 
-    return (
+      case 'name':
+        setName(event.currentTarget.value)
+        break;
       
-    <form className={css.mainForm} onSubmit={this.handleSubmit}>
+      case 'number':
+        setNumber(event.currentTarget.value)
+        break;
+      
+      default:
+
+        console.log("default")
+        break;
+
+    }
+  };
+  
+  
+  
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    props.onSubmit({ name, number });
+    setName('');
+    setNumber('');
+  };
+
+  
+  
+
+  return (
+      
+    <form className={css.mainForm} onSubmit={handleSubmit}>
       <div>
         <label className={css.formLabel}>
           
           Name
-            <input
-              className={css.formInput}
-            value={this.state.name}
-            onChange={this.handleInputChange}
+          <input
+            className={css.formInput}
+            value={name}
+            onChange={handleInputChange}
             type="text"
             name="name"
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -54,10 +67,10 @@ export class ContactForm extends Component {
         <label className={css.formLabel}>
           
           Number
-            <input
-              className={css.formInput}
-            value={this.state.number}
-            onChange={this.handleInputChange}
+          <input
+            className={css.formInput}
+            value={number}
+            onChange={handleInputChange}
             type="tel"
             name="number"
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -67,10 +80,10 @@ export class ContactForm extends Component {
         </label>
       </div>
 
-        <button className={css.addButton} type="submit"> Add contact</button>
+      <button className={css.addButton} type="submit"> Add contact</button>
     </form>
   );
-  }
   
+}
   
-};
+
